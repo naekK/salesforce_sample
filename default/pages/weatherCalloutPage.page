@@ -1,0 +1,73 @@
+<apex:page controller="weatherCallout" lightningStylesheets="true" docType="html-5.0" >
+<h1>weatherCalloutPage</h1>
+<apex:pageBlock>
+    <apex:pageBlockSection>
+        <apex:form>
+            <!--<apex:input label="表示都道府県コード" value="{!prefecture}"></apex:input>-->
+            <apex:selectList label="表示都道府県コード" value="{!prefecture}" size="1">
+                <apex:selectOption itemLabel="北海道" itemValue="010000" />
+                <apex:selectOption itemLabel="青森県" itemValue="020000" />
+                <apex:selectOption itemLabel="岩手県" itemValue="030000" />
+                <apex:selectOption itemLabel="宮城県" itemValue="040000" />
+                <apex:selectOption itemLabel="秋田県" itemValue="050000" />
+                <apex:selectOption itemLabel="山形県" itemValue="060000" />
+                <apex:selectOption itemLabel="福島県" itemValue="070000" />
+                <apex:selectOption itemLabel="茨城県" itemValue="080000" />
+                <apex:selectOption itemLabel="栃木県" itemValue="090000" />
+                <apex:selectOption itemLabel="群馬県" itemValue="100000" />
+                <apex:selectOption itemLabel="埼玉県" itemValue="110000" />
+                <apex:selectOption itemLabel="千葉県" itemValue="120000" />
+                <apex:selectOption itemLabel="東京都" itemValue="130000" />
+                <apex:selectOption itemLabel="神奈川県" itemValue="140000" />
+                <apex:selectOption itemLabel="新潟県" itemValue="150000" />
+                <apex:selectOption itemLabel="富山県" itemValue="160000" />
+                <apex:selectOption itemLabel="石川県" itemValue="170000" />
+                <apex:selectOption itemLabel="福井県" itemValue="180000" />
+                <apex:selectOption itemLabel="山梨県" itemValue="190000" />
+                <apex:selectOption itemLabel="長野県" itemValue="200000" />
+                <apex:selectOption itemLabel="岐阜県" itemValue="210000" />
+                <apex:selectOption itemLabel="静岡県" itemValue="220000" />
+                <apex:selectOption itemLabel="愛知県" itemValue="230000" />
+                <apex:selectOption itemLabel="三重県" itemValue="240000" />
+                <apex:selectOption itemLabel="滋賀県" itemValue="250000" />
+                <apex:selectOption itemLabel="京都府" itemValue="260000" />
+                <apex:selectOption itemLabel="大阪府" itemValue="270000" />
+                <apex:selectOption itemLabel="兵庫県" itemValue="280000" />
+                <apex:selectOption itemLabel="奈良県" itemValue="290000" />
+                <apex:selectOption itemLabel="和歌山県" itemValue="300000" />
+                <apex:selectOption itemLabel="鳥取県" itemValue="310000" />
+                <apex:selectOption itemLabel="島根県" itemValue="320000" />
+                <apex:selectOption itemLabel="岡山県" itemValue="330000" />
+                <apex:selectOption itemLabel="広島県" itemValue="340000" />
+                <apex:selectOption itemLabel="山口県" itemValue="350000" />
+                <apex:selectOption itemLabel="徳島県" itemValue="360000" />
+                <apex:selectOption itemLabel="香川県" itemValue="370000" />
+                <apex:selectOption itemLabel="愛媛県" itemValue="380000" />
+                <apex:selectOption itemLabel="高知県" itemValue="390000" />
+                <apex:selectOption itemLabel="福岡県" itemValue="400000" />
+                <apex:selectOption itemLabel="佐賀県" itemValue="410000" />
+                <apex:selectOption itemLabel="長崎県" itemValue="420000" />
+                <apex:selectOption itemLabel="熊本県" itemValue="430000" />
+                <apex:selectOption itemLabel="大分県" itemValue="440000" />
+                <apex:selectOption itemLabel="宮崎県" itemValue="450000" />
+                <apex:selectOption itemLabel="鹿児島県" itemValue="460000" />
+                <apex:selectOption itemLabel="沖縄県" itemValue="470000" />
+            </apex:selectList>
+            <apex:commandButton action="{!getWeather}" value="get info" reRender="pubOffice,reportDateTime,targetArea,description" />
+        </apex:form>    
+    </apex:pageBlockSection>    
+
+    <apex:pageBlockSection columns="1">
+        <!-- This output text component displays the callout response body. -->
+        <apex:outputText label="発表元" id="pubOffice" value="{!pubOffice}"></apex:outputText>
+        <apex:outputText label="発表時間" id="reportDateTime" value="{!reportDateTime}"></apex:outputText>
+        <apex:outputText label="対象エリア" id="targetArea" value="{!targetArea}"></apex:outputText>
+        <apex:outputText label="概要" id="headlineText" value="{!headlineText}"></apex:outputText>
+        <apex:outputText label="詳細" id="description" value="{!description}"></apex:outputText>        
+    </apex:pageBlockSection>
+    <apex:pageBlockSection columns="1">
+        <p>当ページは<a href="https://www.jma.go.jp/" target="_blank">気象庁のwebサイト</a>より情報を取得して表示しています</p>
+    </apex:pageBlockSection>
+</apex:pageBlock>
+
+</apex:page>
